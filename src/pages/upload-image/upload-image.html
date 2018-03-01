@@ -1,0 +1,59 @@
+<!--
+  Generated template for the UploadImagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+
+    <ion-title style="text-align: center">Subir Imagenes </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="ViewImage()">
+        <ion-icon name="images"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="fondo">
+
+
+  <div padding>
+    <p>{{consecutivo}}</p>
+    <p>{{solicitante}}</p>
+    <p>{{direccion}}</p>
+
+    <div class="botones">
+
+
+      <button ion-button (click)="choosePicture()" class="botton" small>IMAGENES</button>
+
+      <button ion-button color="danger" (click)="pdf()" class="botton" small>PDF</button>
+
+
+
+    </div>
+    <div class="botones">
+
+      <button ion-button (click)="Send()" class="botton" small> Enviar Imagenes</button>
+
+
+      <button ion-button color="danger" (click)="Sendpdf()" class="botton" small>Enviar Pdf</button>
+
+    </div>
+
+
+
+
+    <div class="conten_image">
+      <div class="image" *ngFor="let item of rowDataHomeForm">
+        <img class="imege_item" [src]="item.imagenes">
+        <span class="span" [hidden]="respuesta !==200">
+          <ion-icon class="icono" name="md-checkmark-circle"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>
