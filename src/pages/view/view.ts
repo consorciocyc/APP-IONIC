@@ -4,7 +4,8 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { UploadImagePage } from '../upload-image/upload-image';
-
+import { ToastController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 
 /**
  * Generated class for the ViewPage page.
@@ -23,13 +24,13 @@ export class ViewPage {
   public data;
   public items;
   public res;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  public respuesta;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,    public loadingCtrl: LoadingController,) {
     this.data = JSON.parse(localStorage.getItem('userData'));
     let month = navParams.get('month');
     let month2 = navParams.get('month2');
     let select = navParams.get('select');
-    console.log(month, month2, select, this.data.cedula);
+
 
     if (month != "") {
 
@@ -40,6 +41,11 @@ export class ViewPage {
 
   launchSearch(month, month2, select, cedula) {
 
+    let loader = this.loadingCtrl.create({
+      content: "Por favor Espere...",
+      duration: 2000
+    });
+    loader.present();
 
     var link = 'http://190.0.33.166/appmovil1/class/ConsultaProgramacion2.php';
 
@@ -49,7 +55,8 @@ export class ViewPage {
       result => {
 
           this.items = result;
-
+          this.respuesta = result;
+       
       },
       error => {
         console.log(error);

@@ -37,6 +37,7 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     HttpModule,
+
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

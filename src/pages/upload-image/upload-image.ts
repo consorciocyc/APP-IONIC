@@ -6,6 +6,7 @@ import { File } from '@ionic-native/file';
 import { LoadingController } from 'ionic-angular';
 import { ViewImagePage } from '../view-image/view-image';
 import { FileChooser } from '@ionic-native/file-chooser';
+import { ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the UploadImagePage page.
@@ -31,21 +32,32 @@ export class UploadImagePage {
   public consecutivo;
   public tel;
   public Send_pdf;
+  public municipio;
+  public obri_tel_instalacion;
+  public imagenbotton;
+  public pdfbotton;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public picker: ImagePicker,
     public transfer: FileTransfer,
     public file: File,
     public loadingCtrl: LoadingController,
-    private fileChooser: FileChooser) {
+    private fileChooser: FileChooser,
+    public toastCtrl: ToastController) {
 
     this.data = navParams.get('consec');
     this.direccion = this.data.obri_direccion;
     this.solicitante = this.data.obri_solicitante;
     this.consecutivo = this.data.obri_id_consecutivo;
+    this.municipio = this.data.municipio;
+    this.obri_tel_instalacion = this.data.obri_tel_instalacion;
     console.log(this.direccion);
+
+    this.imagenbotton = true;
+    this.pdfbotton = true;
   }
 
   choosePicture() {
+    this.imagenbotton = false;
     this.rowDataHomeForm = []
     this.respuesta = '';
 
@@ -76,7 +88,10 @@ export class UploadImagePage {
   }
 
   public respuesta;
+
   Send() {
+
+    this.imagenbotton = true;
     let loader = this.loadingCtrl.create({
       content: "Please wait...",
 
@@ -124,6 +139,7 @@ export class UploadImagePage {
 
 
   pdf() {
+    this.pdfbotton = false;
     this.fileChooser.open()
       .then(
 
@@ -136,7 +152,12 @@ export class UploadImagePage {
   }
 
   Sendpdf() {
+    let loader = this.loadingCtrl.create({
+      content: "Por favor Espere...",
 
+    });
+    loader.present();
+    this.pdfbotton = true;
     const fileTransfer: FileTransferObject = this.transfer.create();
 
     let options: FileUploadOptions = {
@@ -153,11 +174,27 @@ export class UploadImagePage {
         console.log(data);
 
         this.respuesta = data.responseCode;
+        if (this.respuesta != 200) {
 
+
+        } else {
+
+          this.presentToast();
+          loader.dismiss();
+        }
       }, (err) => {
         console.log(err)
         // error
       })
 
+  }
+
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Se ha Guardado el Archivo',
+      duration: 3000
+    });
+    toast.present();
   }
 }

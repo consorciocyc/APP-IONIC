@@ -20,12 +20,16 @@
 <ion-content padding>
 
 
-  <ion-list>
+  <ion-list class="list">
     <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        <p class="fontcolor">{{item.EMPRESA}}</p>
+      <h2 class="fontcolor">{{ item.obri_id_consecutivo }}</h2>
 
-      <h2>{{ item.obri_solicitante }}</h2>
-      <h3>{{ item.obri_direccion }}</h3>
-      <p>{{ item.obri_id_consecutivo }}</p>
+      <p>{{ item.obri_solicitante }}</p>
+      <p>{{ item.obri_direccion }}</p>
+      <p>{{ item.municipio }}</p>
+      <p>{{ item.obri_tel_instalacion }}</p>
+      
     </ion-item>
   </ion-list>
 </ion-content>

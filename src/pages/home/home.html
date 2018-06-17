@@ -1,7 +1,7 @@
-<ion-header >
-  <ion-navbar  color="primary" hideBackButton >
+<ion-header>
+  <ion-navbar color="primary" hideBackButton>
     <ion-title class="header">
-     SIP APP
+      SIP APP
     </ion-title>
 
   </ion-navbar>
@@ -14,9 +14,9 @@
 
     <ion-item>
       <ion-label stacked>Usuario</ion-label>
-      <ion-input type="text" name="username" [(ngModel)]="usuario"></ion-input>
+      <ion-input type="number" name="username" [(ngModel)]="usuario"></ion-input>
     </ion-item>
-  
+
     <ion-item>
       <ion-label stacked>Contraseña</ion-label>
       <ion-input type="password" name="password" [(ngModel)]="password"></ion-input>
@@ -24,8 +24,8 @@
 
   </ion-list>
 
-    <div padding>
-      <button ion-button  full (click)="launchLoginPage()">INGRESAR</button>
-    </div>
+  <div padding>
+    <button ion-button full (click)="launchLoginPage()">INGRESAR</button>
+  </div>
 
 </ion-content>

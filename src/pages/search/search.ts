@@ -17,31 +17,37 @@ import{ViewPage} from '../view/view';
 export class SearchPage {
 
   public f = new Date();
-  public dia=this.f.getMonth() +1;
+  public mes=this.f.getMonth() +1;
+  public dia=this.f.getDate();
   public select;
   public month: String;
   public month2: String;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+    let mes;
     let dia;
-    console.log(this.dia);
-    if(this.dia<10){
-
-        dia='0'+this.dia;
-
+    
+    if(this.mes<10){
+      
+        mes='0'+this.mes;
     }else{
 
-       dia=this.dia;
+       mes=this.mes;
     }
-    var fecha= (this.f.getFullYear() + "-" + dia + "-" +  this.f.getDate());
+    if(this.dia<10){
+      dia='0'+this.dia;
+  }else{
+
+     dia=this.dia;
+  }
+    var fecha= (this.f.getFullYear() + "-" + mes + "-" +  dia);
     this.month=fecha;
     this.month2=fecha;
   }
 
 
   OnSearch(){
-    console.log(this.month,this.month2)
     this.navCtrl.push(ViewPage, {
       month: this.month,
       month2: this.month2,

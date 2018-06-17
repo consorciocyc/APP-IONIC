@@ -19,8 +19,35 @@ export class HomePage {
   public data:any = {};
 
   constructor(public navCtrl: NavController,public http   : Http,public toastCtrl: ToastController) {
+  
 
+
+
+    this.data= JSON.parse(localStorage.getItem('userData'));
+
+
+if(this.data==null){
+
+
+
+}else{
+
+  console.log('null')
+  this.Login(this.data);
+}
   }
+
+  Login(data){
+
+    if(data.status=="OK"){
+
+      this.navCtrl.push(IndexPage);
+ 
+   }
+     else{
+                
+    }  
+ }
 
 launchLoginPage(){
 

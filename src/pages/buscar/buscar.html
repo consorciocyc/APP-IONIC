@@ -6,17 +6,39 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-
+      <button ion-button menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+      </button>
     <ion-title style="text-align: center">Buscar</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="ViewImage()">
-        <ion-icon name="images"></ion-icon>
-      </button>
+
     </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="content_search">
+  <div class="botones">
 
+    <ion-item>
+      <ion-label floating>Consecutivo</ion-label>
+      <ion-input type="text" [(ngModel)]="consec"></ion-input>
+    </ion-item>
+    <button ion-button color="danger" (click)="launchSearch()" class="botton" small>Buscar</button>
+
+
+
+  </div>
+
+  <ion-list>
+    <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        <h2 class="fontcolor">{{ item.oempresa }}</h2>
+        <h2 class="fontcolor">{{ item.obri_id_consecutivo }}</h2>
+      <p>{{ item.obri_solicitante }}</p>
+      <p>{{ item.obri_direccion }}</p>
+      <p>{{ item.municipio }}</p>
+      <p>{{ item.obri_tel_instalacion }}</p>
+     
+    </ion-item>
+  </ion-list>
 </ion-content>

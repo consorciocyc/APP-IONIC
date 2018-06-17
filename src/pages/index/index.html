@@ -1,37 +1,18 @@
+
+
 <ion-header>
-  <ion-navbar color="primary" hideBackButton>
-    <ion-title>
-      SIP
-    </ion-title>
-    <ion-buttons end>
-      <button ion-button class="button-out" icon-only (click)="signOut()">
-        <ion-icon class="fa fa-sign-out"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
-</ion-header>
-<ion-menu [content]="content">
-  <ion-header>
     <ion-toolbar color="primary">
-      <ion-title>Menu</ion-title>
+      <button ion-button menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>
+       Home
+      </ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <ion-list>
-      <button ion-item (click)="OnSearch()">
-        Programacion
-      </button>
-      <button ion-item (click)="OnSearchB()">
-        Buscar
-      </button>
-      <button ion-item (click)="openPage(eventsPage)">
-        Events
-      </button>
-      <button ion-item (click)="closeMenu()">
-        Close Menu
-      </button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
 
-<ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+<ion-content padding>
+
+</ion-content>
+
+
