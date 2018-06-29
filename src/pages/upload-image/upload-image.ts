@@ -33,9 +33,10 @@ export class UploadImagePage {
   public tel;
   public Send_pdf;
   public municipio;
-  public obri_tel_instalacion;
+  public Instalacion;
   public imagenbotton;
   public pdfbotton;
+  public idwork;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public picker: ImagePicker,
     public transfer: FileTransfer,
@@ -45,12 +46,13 @@ export class UploadImagePage {
     public toastCtrl: ToastController) {
 
     this.data = navParams.get('consec');
-    this.direccion = this.data.obri_direccion;
-    this.solicitante = this.data.obri_solicitante;
-    this.consecutivo = this.data.obri_id_consecutivo;
-    this.municipio = this.data.municipio;
-    this.obri_tel_instalacion = this.data.obri_tel_instalacion;
-    console.log(this.direccion);
+    this.direccion = this.data.Direccion;
+    this.solicitante = this.data.Solicitante;
+    this.consecutivo = this.data.consecutive;
+    this.municipio = this.data.name_municipality;
+    this.Instalacion = this.data.Instalacion;
+    this.idwork = this.data.idworkI;
+
 
     this.imagenbotton = true;
     this.pdfbotton = true;
@@ -78,7 +80,7 @@ export class UploadImagePage {
       for (var i = 0; i < this.image2.length; i++) {
 
         this.rowDataHomeForm.push({ imagenes: this.image2[i] })
-        console.log(this.rowDataHomeForm)
+
 
       }
 

@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
 //import { ImagePicker } from '@ionic-native/image-picker';
-import { Http } from '@angular/http'
+import { Http, Response, Headers, RequestOptions } from '@angular/http'
 import { ToastController } from 'ionic-angular';
 
 import {IndexPage} from '../index/index';
+import {UserService} from '../../servicio/servicios';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [UserService]
 })
 export class HomePage {
 
@@ -18,36 +21,19 @@ export class HomePage {
   public password;
   public data:any = {};
 
-  constructor(public navCtrl: NavController,public http   : Http,public toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,public http   : Http,public toastCtrl: ToastController, private userService: UserService) {
   
-
-
-
-    this.data= JSON.parse(localStorage.getItem('userData'));
-
-
-if(this.data==null){
-
+ this.data= localStorage.getItem('cedula');
+if(this.data==undefined){
 
 
 }else{
-
-  console.log('null')
-  this.Login(this.data);
+  this.navCtrl.push(IndexPage);
 }
   }
 
-  Login(data){
 
-    if(data.status=="OK"){
 
-      this.navCtrl.push(IndexPage);
- 
-   }
-     else{
-                
-    }  
- }
 
 launchLoginPage(){
 
@@ -61,30 +47,28 @@ if(this.usuario==undefined || this.password==undefined ){
 
    }   else{
 
-    var link = 'http://190.0.33.166/appmovil1/class/login2.php';
-    var myData = JSON.stringify({'usuario': this.usuario,'password':this.password,'tipoObra':1});
 
-    this.http.post(link,myData)
 
-    .subscribe(res => {
+    var link = 'api/user/session_movil';
+   
 
-         localStorage.setItem('userData', res["_body"]);
-         const data= JSON.parse(localStorage.getItem('userData'));
-      if(data.status=="OK"){
+    let data={'usuario': this.usuario,'password':this.password}
+
+    this.userService.login(data).subscribe(result=>{
+
+      if(result.status=="ok"){
      
-       
+        localStorage.setItem('cedula', result.data.usuario_cedula);
+        localStorage.setItem('nombre', result.data.usuario_name);
+
         this.navCtrl.push(IndexPage);
 
       }else{
 
         this.presentToast();
       }
- 
-    }, error => {
+    },error=>{})
 
-    console.log("Oooops!");
-
-   });
 }
 }
 
