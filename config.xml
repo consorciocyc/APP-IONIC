@@ -84,8 +84,13 @@
     <plugin name="com.synconset.imagepicker" spec="~2.1.8">
         <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Message for Usage" />
     </plugin>
-    <engine name="android" spec="~6.3.0" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-filechooser" spec="^1.0.1" />
+    <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.2.1">
+        <variable name="OKHTTP_VERSION" value="3.+" />
+    </plugin>
+    <plugin name="cordova-plugin-geolocation" spec="^4.0.1" />
+    <allow-navigation href="http://192.168.1.126:8100" />
+    <engine name="android" spec="^6.3.0" />
 </widget>

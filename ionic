@@ -1,0 +1,126 @@
+ANDROID_HOME=F:\sdk
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_162
+Subproject Path: CordovaLib
+Starting a Gradle Daemon (subsequent builds will be faster)
+The Task.leftShift(Closure) method has been deprecated and is scheduled to be removed in Gradle 5.0. Please use Task.doLast(Action) instead.
+	at build_8fjlarjm412rwmjgjyh8mw0yz.run(F:\xampp\htdocs\APP-IONIC\platforms\android\build.gradle:143)
+The JavaCompile.setDependencyCacheDir() method has been deprecated and is scheduled to be removed in Gradle 4.0.
+Incremental java compilation is an incubating feature.
+The TaskInputs.source(Object) method has been deprecated and is scheduled to be removed in Gradle 4.0. Please use TaskInputs.file(Object).skipWhenEmpty() instead.
+:preBuild UP-TO-DATE
+:preDebugBuild UP-TO-DATE
+:checkDebugManifest
+:preReleaseBuild UP-TO-DATE
+:CordovaLib:preBuild UP-TO-DATE
+:CordovaLib:preDebugBuild UP-TO-DATE
+:CordovaLib:checkDebugManifest
+:CordovaLib:prepareDebugDependencies
+:CordovaLib:compileDebugAidl UP-TO-DATE
+:CordovaLib:compileDebugNdk UP-TO-DATE
+:CordovaLib:compileLint UP-TO-DATE
+:CordovaLib:copyDebugLint UP-TO-DATE
+:CordovaLib:mergeDebugShaders UP-TO-DATE
+:CordovaLib:compileDebugShaders UP-TO-DATE
+:CordovaLib:generateDebugAssets UP-TO-DATE
+:CordovaLib:mergeDebugAssets UP-TO-DATE
+:CordovaLib:mergeDebugProguardFiles UP-TO-DATE
+:CordovaLib:packageDebugRenderscript UP-TO-DATE
+:CordovaLib:compileDebugRenderscript UP-TO-DATE
+:CordovaLib:generateDebugResValues UP-TO-DATE
+:CordovaLib:generateDebugResources UP-TO-DATE
+:CordovaLib:packageDebugResources UP-TO-DATE
+:CordovaLib:processDebugManifest UP-TO-DATE
+:CordovaLib:generateDebugBuildConfig UP-TO-DATE
+:CordovaLib:processDebugResources UP-TO-DATE
+:CordovaLib:generateDebugSources UP-TO-DATE
+:CordovaLib:incrementalDebugJavaCompilationSafeguard UP-TO-DATE
+:CordovaLib:compileDebugJavaWithJavac UP-TO-DATE
+:CordovaLib:processDebugJavaRes UP-TO-DATE
+:CordovaLib:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:CordovaLib:transformClassesAndResourcesWithSyncLibJarsForDebug UP-TO-DATE
+:CordovaLib:mergeDebugJniLibFolders UP-TO-DATE
+:CordovaLib:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:CordovaLib:transformNative_libsWithSyncJniLibsForDebug UP-TO-DATE
+:CordovaLib:bundleDebug UP-TO-DATE
+:CordovaLib:preReleaseBuild UP-TO-DATE
+:CordovaLib:checkReleaseManifest
+:CordovaLib:prepareReleaseDependencies
+:CordovaLib:compileReleaseAidl UP-TO-DATE
+:CordovaLib:compileReleaseNdk UP-TO-DATE
+:CordovaLib:copyReleaseLint UP-TO-DATE
+:CordovaLib:mergeReleaseShaders UP-TO-DATE
+:CordovaLib:compileReleaseShaders UP-TO-DATE
+:CordovaLib:generateReleaseAssets UP-TO-DATE
+:CordovaLib:mergeReleaseAssets UP-TO-DATE
+:CordovaLib:mergeReleaseProguardFiles UP-TO-DATE
+:CordovaLib:packageReleaseRenderscript UP-TO-DATE
+:CordovaLib:compileReleaseRenderscript UP-TO-DATE
+:CordovaLib:generateReleaseResValues UP-TO-DATE
+:CordovaLib:generateReleaseResources UP-TO-DATE
+:CordovaLib:packageReleaseResources UP-TO-DATE
+:CordovaLib:processReleaseManifest UP-TO-DATE
+:CordovaLib:generateReleaseBuildConfig UP-TO-DATE
+:CordovaLib:processReleaseResources UP-TO-DATE
+:CordovaLib:generateReleaseSources UP-TO-DATE
+:CordovaLib:incrementalReleaseJavaCompilationSafeguard UP-TO-DATE
+:CordovaLib:compileReleaseJavaWithJavac UP-TO-DATE
+:CordovaLib:processReleaseJavaRes UP-TO-DATE
+:CordovaLib:transformResourcesWithMergeJavaResForRelease UP-TO-DATE
+:CordovaLib:transformClassesAndResourcesWithSyncLibJarsForRelease UP-TO-DATE
+:CordovaLib:mergeReleaseJniLibFolders UP-TO-DATE
+:CordovaLib:transformNative_libsWithMergeJniLibsForRelease UP-TO-DATE
+:CordovaLib:transformNative_libsWithSyncJniLibsForRelease UP-TO-DATE
+:CordovaLib:bundleRelease UP-TO-DATE
+:prepareComAndroidSupportAnimatedVectorDrawable2340Library UP-TO-DATE
+:prepareComAndroidSupportAppcompatV72340Library UP-TO-DATE
+:prepareComAndroidSupportSupportV42340Library UP-TO-DATE
+:prepareComAndroidSupportSupportVectorDrawable2340Library UP-TO-DATE
+:prepareOrgApacheCordovaCordovaLib630DebugLibrary UP-TO-DATE
+:prepareDebugDependencies
+:compileDebugAidl UP-TO-DATE
+:compileDebugRenderscript UP-TO-DATE
+:generateDebugBuildConfig UP-TO-DATE
+:generateDebugResValues UP-TO-DATE
+:generateDebugResources UP-TO-DATE
+:mergeDebugResources UP-TO-DATE
+:processDebugManifest UP-TO-DATE
+:processDebugResources UP-TO-DATE
+:generateDebugSources UP-TO-DATE
+:incrementalDebugJavaCompilationSafeguard UP-TO-DATE
+:compileDebugJavaWithJavac UP-TO-DATE
+:compileDebugNdk UP-TO-DATE
+:compileDebugSources UP-TO-DATE
+:mergeDebugShaders UP-TO-DATE
+:compileDebugShaders UP-TO-DATE
+:generateDebugAssets UP-TO-DATE
+:mergeDebugAssets UP-TO-DATE
+:transformClassesWithDexForDebug UP-TO-DATE
+:mergeDebugJniLibFolders UP-TO-DATE
+:transformNative_libsWithMergeJniLibsForDebug UP-TO-DATE
+:processDebugJavaRes UP-TO-DATE
+:transformResourcesWithMergeJavaResForDebug UP-TO-DATE
+:validateSigningDebug
+:packageDebug UP-TO-DATE
+:assembleDebug UP-TO-DATE
+:cdvBuildDebug UP-TO-DATE
+
+BUILD SUCCESSFUL
+
+Total time: 9.647 secs
+Built the following apk(s): 
+	F:/xampp/htdocs/APP-IONIC/platforms/android/build/outputs/apk/android-debug.apk
+ANDROID_HOME=F:\sdk
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_162
+No target specified and no devices found, deploying to emulator
+No emulator specified, defaulting to Nexus_5X_API_23
+Waiting for emulator to start...
+emulator: Requested console port 5584: Inferring adb port 5585.
+HAX is working and emulator runs in fast virt mode.
+Your emulator is out of date, please update by launching Android Studio:
+ - Start Android Studio
+ - Select menu "Tools > Android > SDK Manager"
+ - Click "SDK Tools" tab
+ - Check "Android Emulator" checkbox
+ - Click "OK"
+
+emulator: Saving state on exit with session uptime 377198 ms

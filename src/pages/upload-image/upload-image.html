@@ -24,7 +24,14 @@
       <p class="fontcolor">{{Instalacion}}</p>
     </ion-item>
   </ion-list>
+  <div class="botones">
+    <button ion-button #ruta (click)="irhasta()">Ruta</button>
+    <button ion-button (click)="irhasta()" [disabled]="disabled">En Sitio</button>
+    <button ion-button (click)="irhasta()" [disabled]="disabled">Atendido</button>
+    <button ion-button (click)="irhasta()" [disabled]="disabled">No Atendido</button>
 
+
+  </div>
   <div padding>
 
     <div class="botones">
@@ -39,8 +46,11 @@
     <div class="conten_image">
       <div class="image" *ngFor="let item of rowDataHomeForm">
         <img class="imege_item" [src]="item.imagenes">
-        <span class="span" [hidden]="respuesta !==200">
+        <span class="span" [hidden]="respuesta">
           <ion-icon class="icono" name="md-checkmark-circle"></ion-icon>
+        </span>
+        <span class="span" [hidden]="falso">
+          <ion-icon class="icono1" name="md-close-circle"></ion-icon>
         </span>
       </div>
     </div>

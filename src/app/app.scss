@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,109 +13,101 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-.conten_image{
-    margin-top: 1em;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
+.conten_image {
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.image{
-    width: 30%;
-    margin-bottom: 10px;
-    position: relative;
-
-
+.image {
+  width: 30%;
+  margin-bottom: 10px;
+  position: relative;
 }
-.image1{
-    width: 100%;
-    height: 60%;
-    margin-bottom: 1em;
-    position: relative;
-
-
+.image1 {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 1em;
+  position: relative;
 }
-.imege_item{
-    display: block;
-    width: 100%;
-
+.imege_item {
+  display: block;
+  width: 100%;
 }
-.span{
-    display: block;
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
+.span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-.icono{
-    color: lime;
-    
+.span2 {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
-.fondo{
-
-   
+.icono {
+  color: lime;
 }
-
-.content-login{
-
-    margin-top:80px;
-
+.icono1 {
+  color: red;
+}
+.fondo {
 }
 
-.content_search{
-
-    margin-top: 40px;
-    text-align: center;
-    text-align: right
-  }
-
-.center{
-  
-    text-align: center;
+.content-login {
+  margin-top: 80px;
 }
-.center1{
-    text-align: center;
- 
-    
+
+.content_search {
+  margin-top: 40px;
+  text-align: center;
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+.center1 {
+  text-align: center;
 }
 
 ion-header {
-    .button-md {
-      box-shadow: none;
-    }
-  
-    .toolbar-title {
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-direction: row;
-      flex-direction: row;
-      -webkit-align-items: center;
-      align-items: center;
-      -webkit-justify-content: center;
-      justify-content: center;
-    }
+  .button-md {
+    box-shadow: none;
   }
 
-  .botones{
+  .toolbar-title {
+    display: -webkit-flex;
     display: flex;
-    width: 100%;
-    justify-content: space-between;   
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
 }
-    
-.botton{
-    width: 48%;
-    margin-bottom: 10px;
 
+.botones {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
-.list{
-    margin-top: 10px;
+.botton {
+  width: 48%;
+  margin-bottom: 10px;
 }
-.fontcolor{
 
+.list {
+  margin-top: 10px;
+}
+.fontcolor {
   color: red;
-
 }
