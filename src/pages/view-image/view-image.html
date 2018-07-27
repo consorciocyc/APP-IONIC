@@ -15,7 +15,7 @@
 <ion-content padding>
   <div class="conten_image">
     <div class="image" *ngFor="let item of items">
-      <img class="imege_item" [src]="item.ruta" (click)="ViewImagen(item.ruta)">
+      <img class="imege_item" src="{{urlimage}}{{item.url}}{{item.name_image}}" (click)="ViewImagen(item.idimage_internas)">
       <span class="span">
         <ion-icon class="icono" name="md-checkmark-circle"></ion-icon>
       </span>

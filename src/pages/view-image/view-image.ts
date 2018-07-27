@@ -17,7 +17,7 @@ import { ViewFotoPage } from "../view-foto/view-foto";
 })
 export class ViewImagePage {
   public items;
-
+  public urlimage = "http://190.0.33.166:85/sip/public/public";
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,7 +36,7 @@ export class ViewImagePage {
       .map(res => res.json())
       .subscribe(
         result => {
-          this.items = result;
+          this.items = result.response;
           console.log(result);
         },
         error => {
@@ -45,10 +45,11 @@ export class ViewImagePage {
       );
   }
 
-  ViewImagen(ruta) {
-    console.log(ruta);
+  ViewImagen(idimage_internas) {
+    console.log(idimage_internas);
+
     this.navCtrl.push(ViewFotoPage, {
-      ruta: ruta
+      ruta: idimage_internas
     });
   }
 }
