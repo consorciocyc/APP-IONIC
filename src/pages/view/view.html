@@ -22,14 +22,14 @@
 
   <ion-list class="list">
     <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-        <p class="fontcolor">{{item.EMPRESA}}</p>
-      <h2 class="fontcolor">{{ item.obri_id_consecutivo }}</h2>
+      <p class="fontcolor">{{item.company_name}}</p>
+      <h2 class="fontcolor">{{ item.consecutive }}</h2>
 
-      <p>{{ item.obri_solicitante }}</p>
-      <p>{{ item.obri_direccion }}</p>
-      <p>{{ item.municipio }}</p>
-      <p>{{ item.obri_tel_instalacion }}</p>
-      
+      <p>{{ item.Solicitante }}</p>
+      <p>{{ item.Direccion }}</p>
+      <p>{{ item.name_municipality }}</p>
+      <p>{{ item.Telefono }}</p>
+
     </ion-item>
   </ion-list>
 </ion-content>

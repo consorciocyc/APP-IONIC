@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http'
-import { UploadImagePage } from '../upload-image/upload-image';
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Http } from "@angular/http";
+import { UploadImagePage } from "../upload-image/upload-image";
 
 /**
  * Generated class for the BuscarPage page.
@@ -12,41 +12,39 @@ import { UploadImagePage } from '../upload-image/upload-image';
 
 @IonicPage()
 @Component({
-  selector: 'page-buscar',
-  templateUrl: 'buscar.html',
+  selector: "page-buscar",
+  templateUrl: "buscar.html"
 })
 export class BuscarPage {
-
   public consec;
   public items;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
-
-  }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: Http
+  ) {}
 
   launchSearch() {
+    var link = "http://190.0.33.166:85/sip/public/api/movil/search_consec";
 
+    var myData = { consec: this.consec };
 
-    var link = 'http://190.0.33.166/appmovil1/class/Search_Consec.php';
-
-    var myData = JSON.stringify({ 'consec': this.consec });
-
-    this.http.post(link, myData).map(res => res.json()).subscribe(
-      result => {
-
-        this.items = result;
-
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.http
+      .post(link, myData)
+      .map(res => res.json())
+      .subscribe(
+        result => {
+          this.items = result.response;
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
   itemSelected(consec) {
-
     this.navCtrl.push(UploadImagePage, {
       consec: consec
     });
-
   }
 }

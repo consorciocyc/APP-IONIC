@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar color="primary">
-      <button ion-button menuToggle start>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title style="text-align: center">Buscar Programacion </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="Onright()">
@@ -24,17 +24,7 @@
     <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="month2"></ion-datetime>
   </ion-item>
 
-  <ion-list style="margin-top:20px">
-    <ion-item>
-      <ion-label>Cargo</ion-label>
-      <ion-select interface="action-sheet" [(ngModel)]="select">
-        <ion-option value="RR">Recorredor</ion-option>
-        <ion-option value="SE">Servicio</ion-option>
-        <ion-option value="PR">Encargado</ion-option>
-      </ion-select>
-    </ion-item>
 
-  </ion-list>
 
   <div padding style="margin-top:20px">
     <button ion-button full (click)="OnSearch()">Buscar</button>

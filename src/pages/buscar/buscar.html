@@ -6,9 +6,9 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-      <button ion-button menuToggle start>
-          <ion-icon name="menu"></ion-icon>
-      </button>
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title style="text-align: center">Buscar</ion-title>
     <ion-buttons end>
 
@@ -32,13 +32,13 @@
 
   <ion-list>
     <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-        <h2 class="fontcolor">{{ item.oempresa }}</h2>
-        <h2 class="fontcolor">{{ item.obri_id_consecutivo }}</h2>
-      <p>{{ item.obri_solicitante }}</p>
-      <p>{{ item.obri_direccion }}</p>
-      <p>{{ item.municipio }}</p>
-      <p>{{ item.obri_tel_instalacion }}</p>
-     
+      <h2 class="fontcolor">{{ item.company_name }}</h2>
+      <h2 class="fontcolor">{{ item.consecutive }}</h2>
+      <p>{{ item.Solicitante }}</p>
+      <p>{{ item.Direccion }}</p>
+      <p>{{ item.name_municipality }}</p>
+      <p>{{ item.Instalacion }}</p>
+
     </ion-item>
   </ion-list>
 </ion-content>
