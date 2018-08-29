@@ -51,7 +51,6 @@ export class SearchPage {
     this.navCtrl.push(ViewPage, {
       month: this.month,
       month2: this.month2,
-      select: this.select
     });
   }
 

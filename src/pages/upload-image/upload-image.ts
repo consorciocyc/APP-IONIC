@@ -35,7 +35,6 @@ import {
   templateUrl: "upload-image.html"
 })
 export class UploadImagePage {
-  @ViewChild("ruta") private ruta: ElementRef;
   public data;
   public image;
   public image2;
@@ -76,9 +75,7 @@ export class UploadImagePage {
     private fileChooser: FileChooser,
     public toastCtrl: ToastController,
     private geolocation: Geolocation,
-    private launchNavigator: LaunchNavigator,
-    private renderer: Renderer2,
-    hostElement: ElementRef
+    private launchNavigator: LaunchNavigator
   ) {
     this.firstProjection =
       'PROJCS["MAGNA-SIRGAS / Colombia Bogota zone",GEOGCS["MAGNA-SIRGAS",DATUM["Marco_Geocentrico_Nacional_de_Referencia",SPHEROID["GRS 1980",6378137,298.257222101,AUTHORITY["EPSG","7019"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY["EPSG","6686"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4686"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",4.596200416666666],PARAMETER["central_meridian",-74.07750791666666],PARAMETER["scale_factor",1],PARAMETER["false_easting",1000000],PARAMETER["false_northing",1000000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","3116"]]';

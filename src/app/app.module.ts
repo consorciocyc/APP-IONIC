@@ -25,7 +25,8 @@ import { BuscarPage } from "../pages/buscar/buscar";
 
 import { MyApp } from "./app.component";
 import { HomePage } from "../pages/home/home";
-
+import { ActasPage } from "../pages/actas/actas";
+import { Camera } from "@ionic-native/camera";
 @NgModule({
   declarations: [
     MyApp,
@@ -36,7 +37,8 @@ import { HomePage } from "../pages/home/home";
     UploadImagePage,
     ViewImagePage,
     ViewFotoPage,
-    BuscarPage
+    BuscarPage,
+    ActasPage
   ],
   imports: [BrowserModule, HttpModule, IonicModule.forRoot(MyApp)],
   bootstrap: [IonicApp],
@@ -49,7 +51,8 @@ import { HomePage } from "../pages/home/home";
     UploadImagePage,
     ViewImagePage,
     ViewFotoPage,
-    BuscarPage
+    BuscarPage,
+    ActasPage
   ],
   providers: [
     StatusBar,
@@ -60,6 +63,7 @@ import { HomePage } from "../pages/home/home";
     FileChooser,
     Geolocation,
     LaunchNavigator,
+    Camera,
     File,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]

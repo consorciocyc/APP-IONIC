@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center">Buscar</ion-title>
+    <ion-buttons end>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="content_search">
+
+
+  <div class="botones">
+
+    <ion-item>
+
+
+      <ion-label>Oti</ion-label>
+      <ion-input type="text" [(ngModel)]="id_oti"></ion-input>
+    </ion-item>
+    <button ion-button color="danger" (click)="search_obr()" class="botton" small>Buscar Oti</button>
+
+  </div>
+
+  <div class="botones">
+    <ion-item>
+
+      <ion-label>Acta</ion-label>
+      <ion-input type="text" [(ngModel)]="dir"></ion-input>
+
+    </ion-item>
+    <button ion-button color="danger" class="botton" (click)="create_acta()" small style="margin-top: 10px;">Crear Acta</button>
+  </div>
+
+
+  <ion-list class="list">
+    <ion-item ion-item *ngFor="let list of list" (click)="itemSelected(list)">
+      <p class="fontcolor"> Consecutivo: {{list.obr_consecutivo}}</p>
+      <h2 class="fontcolor">Oti: {{ list.obr_anillos_oti }}</h2>
+
+      <p>Proyecto: {{ list.obr_nproyecto }}</p>
+      <p>N Plano: {{ list.obr_nplano }}</p>
+
+
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+
+    <div class="botones">
+      <button ion-button (click)="choosePicture()" class="botton" small>SELECCIONAR IMAGENES</button>
+      <button ion-button (click)="Sendimage()" class="botton" small [disabled]="imagenbotton">SUBIR IMAGENES</button>
+    </div>
+    <div class="botones">
+
+      <button ion-button color="danger" (click)="pdf()" class="botton" small>SELECCIONAR PDF</button>
+      <button ion-button color="danger" (click)="Sendpdf()" class="botton" small [disabled]="pdfbotton">SUBIR PDF</button>
+    </div>
+
+    <div class="conten_image">
+      <div class="image" *ngFor="let item of rowDataHomeForm">
+        <img class="imege_item" [src]="item.imagenes">
+
+        <span class="span" [hidden]="respuesta">
+          <ion-icon class="icono" name="md-checkmark-circle"></ion-icon>
+        </span>
+
+        <span class="span" [hidden]="falso">
+          <ion-icon class="icono1" name="md-close-circle"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</ion-content>
