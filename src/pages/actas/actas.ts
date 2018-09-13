@@ -75,69 +75,9 @@ export class ActasPage {
       _imagePath => {
         this.image = _imagePath;
         this.image2 = _imagePath;
-        console.log(this.image2);
 
         for (var i = 0; i < this.image2.length; i++) {
           this.rowDataHomeForm.push({ imagenes: this.image2[i] });
-
-          var newstr = this.image2[i].replace(
-            "file:///data/user/0/io.ionic.starter/cache/tmp_",
-            ""
-          );
-
-          let name = newstr.substr(0, 19);
-
-          let image = name + ".jpg";
-          let image1 = name + ".jpg_old";
-          this.file
-            .checkDir(this.file.externalRootDirectory + "/DCIM/", this.dir)
-            .then(_ =>
-              this.file
-                .copyFile(
-                  this.file.externalRootDirectory + "/DCIM/Camera",
-                  image,
-                  this.file.externalRootDirectory + "/DCIM/" + this.dir,
-                  image1
-                )
-                .then(_ =>
-                  this.file
-                    .removeFile(
-                      this.file.externalRootDirectory + "/DCIM/Camera",
-                      image
-                    )
-                    .then(_ => console.log("Eliminado exists"))
-                    .catch(err => console.log("error Al eliminar"))
-                )
-                .catch(err => console.log("ERROR AL COPIAR IMAGEN"))
-            )
-            .catch(err =>
-              this.file
-                .createDir(
-                  this.file.externalRootDirectory + "/DCIM/",
-                  this.dir,
-                  this.dir
-                )
-                .then(_ =>
-                  this.file
-                    .copyFile(
-                      this.file.externalRootDirectory + "/DCIM/Camera",
-                      image,
-                      this.file.externalRootDirectory + "/DCIM/" + this.dir,
-                      image1
-                    )
-                    .then(_ =>
-                      this.file
-                        .removeFile(
-                          this.file.externalRootDirectory + "/DCIM/Camera",
-                          image
-                        )
-                        .then(_ => console.log("Eliminado exists"))
-                        .catch(err => console.log("error Al eliminar"))
-                    )
-                    .catch(err => console.log("ERROR AL COPIAR IMAGEN"))
-                )
-                .catch(err => console.log("ERROR CREAR "))
-            );
         }
         this.imagenbotton = false;
       },
@@ -146,7 +86,6 @@ export class ActasPage {
   }
 
   search_obr() {
-    console.log(this.contractos);
     if (this.contractos == undefined) {
       this.contract();
       return;
@@ -177,14 +116,20 @@ export class ActasPage {
     loader.present();
     const fileTransfer: FileTransferObject = this.transfer.create();
 
-    let options: FileUploadOptions = {
-      fileKey: "file",
-      fileName: "name.jpg",
-      headers: {},
-      params: { params: this.list[0], idacta: this.idacta }
-    };
-
     for (var i = 0; i < this.image.length; i++) {
+      var res = this.image[i].replace(
+        "file:///data/user/0/io.ionic.starter/cache/tmp_",
+        ""
+      );
+
+      let cadena01: any = res.substr(0, 19);
+      let options: FileUploadOptions = {
+        fileKey: "file",
+        fileName: cadena01 + ".jpg",
+        headers: {},
+        params: { params: this.list[0], idacta: this.idacta }
+      };
+      console.log(this.image[i]);
       fileTransfer
         .upload(
           this.image[i],
@@ -196,7 +141,6 @@ export class ActasPage {
             var json = JSON.parse(data.response);
             if (json.response == true) {
               this.respuesta = false;
-              console.log(this.image[i]);
               this.imagenbotton = true;
             } else {
               this.falso = false;
