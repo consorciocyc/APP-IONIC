@@ -1,7 +1,7 @@
-
 import { Component, ElementRef, Renderer2, ViewChild } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { ImagePicker } from "@ionic-native/image-picker";
+import { ViewoymPage } from "../viewoym/viewoym";
 import {
   FileTransfer,
   FileUploadOptions,
@@ -9,7 +9,6 @@ import {
 } from "@ionic-native/file-transfer";
 import { File } from "@ionic-native/file";
 import { LoadingController } from "ionic-angular";
-import { ViewImagePage } from "../view-image/view-image";
 import { FileChooser } from "@ionic-native/file-chooser";
 import { ToastController } from "ionic-angular";
 /**
@@ -21,58 +20,54 @@ import { ToastController } from "ionic-angular";
 
 @IonicPage()
 @Component({
-  selector: 'page-uploadyom',
-  templateUrl: 'uploadyom.html',
+  selector: "page-uploadyom",
+  templateUrl: "uploadyom.html"
 })
 export class UploadyomPage {
-
   public respuesta;
   public falso;
   public imagenbotton;
   public rowDataHomeForm;
-  public image
+  public image;
   public data;
   public phone;
   public solicitante;
   public consecutivo;
   public municipio;
   public pedido;
+  public Send_pdf;
+  public pdfbotton;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
     public picker: ImagePicker,
     public transfer: FileTransfer,
     public file: File,
     public loadingCtrl: LoadingController,
     private fileChooser: FileChooser,
-    public toastCtrl: ToastController,
-
+    public toastCtrl: ToastController
   ) {
     this.data = navParams.get("consec");
-
     this.consecutivo = this.data.consecutive;
     this.pedido = this.data.pedido;
     this.solicitante = this.data.user;
     this.phone = this.data.phone;
     this.municipio = this.data.name_municipality;
-
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad UploadyomPage');
-  }
+  ionViewDidLoad() {}
 
   choosePicture() {
     this.respuesta = true;
     this.falso = true;
     this.imagenbotton = false;
     this.rowDataHomeForm = [];
-    
 
     let options = {
       title: "selecionar imagen",
       message: "select 1",
-      maximumImagesCount: 9,
+      maximumImagesCount: 12,
       outType: 0,
       width: 1920,
       height: 1080,
@@ -105,7 +100,7 @@ export class UploadyomPage {
       headers: {},
       params: { params: this.data }
     };
-
+    console.log(options);
     for (var i = 0; i < this.image.length; i++) {
       fileTransfer
         .upload(
@@ -135,7 +130,55 @@ export class UploadyomPage {
 
     //let reader = new FileReader();
   }
+  pdf() {
+    this.pdfbotton = false;
+    this.fileChooser
+      .open()
+      .then(uri => (this.Send_pdf = uri))
+      .catch(e => console.log(e));
+  }
+  Sendpdf() {
+    let loader = this.loadingCtrl.create({
+      content: "Por favor Espere..."
+    });
+    loader.present();
+    this.pdfbotton = true;
+    const fileTransfer: FileTransferObject = this.transfer.create();
 
+    let options: FileUploadOptions = {
+      fileKey: "file",
+      fileName: "name.pdf",
+      headers: {},
+      params: { params: this.data }
+    };
 
+    fileTransfer
+      .upload(
+        this.Send_pdf,
+        "http://190.0.33.166:85/sip/public/api/movil/send_image_oym",
+        options
+      )
+      .then(
+        data => {
+          console.log(data);
+        },
+        err => {
+          console.log(err);
+          // error
+        }
+      );
+  }
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: "Se ha Guardado el Archivo",
+      duration: 3000
+    });
+    toast.present();
+  }
 
+  ViewImage() {
+    this.navCtrl.push(ViewoymPage, {
+      data: this.data
+    });
+  }
 }
