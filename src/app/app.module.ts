@@ -14,6 +14,8 @@ import { ViewFotoPage } from "../pages/view-foto/view-foto";
 import { Geolocation } from "@ionic-native/geolocation";
 import { LaunchNavigator } from "@ionic-native/launch-navigator";
 import { ImagePicker } from "@ionic-native/image-picker";
+import {OymPage} from"../pages/oym/oym"
+import{UploadyomPage} from "../pages/uploadyom/uploadyom";
 import {
   FileTransfer,
   FileUploadOptions,
@@ -34,10 +36,12 @@ import { Camera } from "@ionic-native/camera";
     IndexPage,
     SearchPage,
     ViewPage,
+    OymPage,
     UploadImagePage,
     ViewImagePage,
     ViewFotoPage,
     BuscarPage,
+    UploadyomPage,
     ActasPage
   ],
   imports: [BrowserModule, HttpModule, IonicModule.forRoot(MyApp)],
@@ -48,10 +52,12 @@ import { Camera } from "@ionic-native/camera";
     IndexPage,
     SearchPage,
     ViewPage,
+    OymPage,
     UploadImagePage,
     ViewImagePage,
     ViewFotoPage,
     BuscarPage,
+    UploadyomPage,
     ActasPage
   ],
   providers: [

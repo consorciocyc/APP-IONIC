@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+
+    <ion-title style="text-align: center">Subir Imagenes OYM</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="ViewImage()">
+        <ion-icon name="images"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="fondo">
+
+
+  <ion-list class="list">
+    <ion-item ion-item>
+
+      <h2 class="fontcolor">{{consecutivo }}</h2>
+      <p>{{pedido}}</p>
+      <p>{{solicitante}}</p>
+      <p>{{phone}}</p>
+      <p>{{municipio}}</p>
+
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+
+    <div class="botones">
+      <button ion-button (click)="choosePicture()" class="botton" small>IMAGENES</button>
+      <button ion-button color="danger" (click)="pdf()" class="botton" small>PDF</button>
+    </div>
+    <div class="botones">
+      <button ion-button (click)="Send()" class="botton" small [disabled]="imagenbotton"> Enviar Imagenes</button>
+      <button ion-button color="danger" (click)="Sendpdf()" class="botton" small [disabled]="pdfbotton">Enviar Pdf</button>
+    </div>
+
+    <div class="conten_image">
+      <div class="image" *ngFor="let item of rowDataHomeForm">
+        <img class="imege_item" [src]="item.imagenes">
+
+        <span class="span" [hidden]="respuesta">
+          <ion-icon class="icono" name="md-checkmark-circle"></ion-icon>
+        </span>
+
+        <span class="span" [hidden]="falso">
+          <ion-icon class="icono1" name="md-close-circle"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>

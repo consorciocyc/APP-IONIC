@@ -9,6 +9,7 @@ import { HomePage } from "../pages/home/home";
 import { IndexPage } from "../pages/index/index";
 import { ActasPage } from "../pages/actas/actas";
 import { App, MenuController } from "ionic-angular";
+import {OymPage} from "../pages/oym/oym";
 
 @Component({
   templateUrl: "app.html"
@@ -59,5 +60,10 @@ export class MyApp {
     localStorage.clear();
     this.nav.setRoot(HomePage);
     this.menuCtrl.enable(false);
+  }
+
+  oym() {
+    this.nav.setRoot(OymPage);
+    this.menuCtrl.close();
   }
 }

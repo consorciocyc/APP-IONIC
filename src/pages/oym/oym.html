@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      O Y M
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-list class="list">
+    <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <h2 class="fontcolor">{{ item.consecutive }}</h2>
+      <p style="font-size: 12px;">{{ item.pedido }}</p>
+      <p style="font-size: 12px;">{{ item.user }}</p>
+      <p style="font-size: 12px;">{{ item.phone }}</p>
+      <p style="font-size: 12px;">{{ item.name_municipality }}</p>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

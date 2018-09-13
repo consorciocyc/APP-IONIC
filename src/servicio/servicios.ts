@@ -20,4 +20,13 @@ export class UserService {
       )
       .map(res => res.json());
   }
+
+  public searchprogramming_oym(data) {
+    return this.http
+      .post(
+        "http://190.0.33.166:85/sip/public/api/movil/search_programming_oym",
+        data
+      )
+      .map(res => res.json());
+  }
 }
