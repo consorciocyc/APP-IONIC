@@ -10,6 +10,7 @@ import { IndexPage } from "../pages/index/index";
 import { ActasPage } from "../pages/actas/actas";
 import { App, MenuController } from "ionic-angular";
 import {OymPage} from "../pages/oym/oym";
+import{SearchOymPage} from "../pages/search-oym/search-oym"
 
 @Component({
   templateUrl: "app.html"
@@ -45,6 +46,11 @@ export class MyApp {
 
   actasview() {
     this.nav.setRoot(ActasPage);
+    this.menuCtrl.close();
+  }
+
+  search_oym(){
+    this.nav.setRoot(SearchOymPage);
     this.menuCtrl.close();
   }
 

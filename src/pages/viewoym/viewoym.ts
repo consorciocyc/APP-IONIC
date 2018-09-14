@@ -48,7 +48,7 @@ export class ViewoymPage {
 
   ViewImagen(idimage_internas) {
     this.navCtrl.push(ViewFotoPage, {
-      ruta: idimage_internas
+      ruta: idimage_internas,type:3
     });
   }
 }

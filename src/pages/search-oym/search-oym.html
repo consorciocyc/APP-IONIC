@@ -1,0 +1,44 @@
+<!--
+  Generated template for the BuscarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle start>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style="text-align: center">Buscar</ion-title>
+    <ion-buttons end>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="content_search">
+  <div class="botones">
+
+    <ion-item>
+      <ion-label floating>Consecutivo</ion-label>
+      <ion-input type="text" [(ngModel)]="consec"></ion-input>
+    </ion-item>
+    <button ion-button color="danger" (click)="launchSearch()" class="botton" small>Buscar</button>
+
+
+
+  </div>
+
+  <ion-list>
+    <ion-item ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <h2 class="fontcolor">{{ item.company_name }}</h2>
+      <h2 class="fontcolor">{{ item.consecutive }}</h2>
+      <p>{{ item.user }}</p>
+      <p>{{ item.pedido }}</p>
+      <p>{{ item.name_municipality }}</p>
+      <p>{{ item.phone }}</p>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -16,23 +16,28 @@ import { Http } from "@angular/http";
 export class ViewFotoPage {
   public ruta;
   public ruta1;
+  public type;
   public urlimage = "http://190.0.33.166:85/sip/public/public";
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http
   ) {
-    let ruta = navParams.get("ruta");
-    this.ruta = ruta;
-    this.Search_image(ruta);
+    this.ruta = navParams.get("ruta");
+    this.type = navParams.get("type");
+
+    this.Search_image();
   }
 
-  Search_image(ruta) {
-    console.log(ruta);
-    let data = { ruta: ruta };
-    var link = "http://190.0.33.166:85/sip/public/api/movil/search_imageone";
+  Search_image() {
 
-    this.http
+    let data = { ruta: this.ruta,type: this.type};
+
+
+    if(this.type==1){
+
+      var link = "http://190.0.33.166:85/sip/public/api/movil/search_imageone";
+      this.http
       .post(link, data)
       .map(res => res.json())
       .subscribe(
@@ -45,5 +50,24 @@ export class ViewFotoPage {
           console.log(error);
         }
       );
+    }
+    if(this.type==3){
+      var link = "http://190.0.33.166:85/sip/public/api/movil/search_imageone_oym";
+      this.http
+      .post(link, data)
+      .map(res => res.json())
+      .subscribe(
+        result => {
+          this.ruta1 =
+            this.urlimage + result.response.url + result.response.name_image;
+          console.log(this.ruta1);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+    
+
   }
 }
